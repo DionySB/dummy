@@ -4,47 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Dano Pokémon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="static/styles.css">
-  <script src="static/scripts.js"></script>
 </head>
 <body>
+
+  <nav class="navbar">
+    <a href="https://github.com/DionySB/dummycalc" target="_blank">
+      <i class="navbar-profile-icon fab fa-github"></i>
+    </a>
+    <h1 class="navbar-name">Dummy</h1>
+  </nav>
+
   <h1>Calculadora de Dano Pokémon</h1>
-  
+  <img src="static/img/allheld.png">
+
   <div class="container">
-    <label for="dano_base">Dano base do Pokémon:</label>
-    <input type="number" id="dano_base">
+    <div class="input-container">
+      <label for="dano_base">Dano base do Pokémon:</label>
+      <input type="number" id="dano_base" class="relativecontainer">
+    </div>
 
-  <label for="item_possui">Item que o Pokémon possui:</label>
-  <select id="item_possui" class="vodiapicker">
-    <option value="n/a">N/A</option>
-    <option value="8" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
-    <option value="1" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
-    <option value="3" data-thumbnail="static/img/attack-3.png">Attack T4 ()</option>
-    <option value="4" data-thumbnail="static/img/attack-4.png">Attack T5 ()</option>
-    <option value="5" data-thumbnail="static/img/attack-5.png">Attack T6 ()</option>
-    <option value="6" data-thumbnail="static/img/attack-6.png">Attack T7 ()</option>
-    <option value="7" data-thumbnail="static/img/attack-7.png">Attack T8 ()</option>
-    <option value="2" data-thumbnail="static/img/attack-8.png">Attack T3 ()</option>
-  </select>
-  
-  <label for="item_deseja">Item que o Pokémon deseja:</label>
-  <select id="item_deseja" class="vodiapicker">
-    <option value="" data-thumbnail="">Nenhum</option>
-    <option value="1" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
-    <option value="2" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
-    <option value="3" data-thumbnail="static/img/attack-3.png">Attack T3 ()</option>
-    <option value="4" data-thumbnail="static/img/attack-4.png">Attack T4 ()</option>
-    <option value="5" data-thumbnail="static/img/attack-5.png">Attack T5 ()</option>
-    <option value="6" data-thumbnail="static/img/attack-6.png">Attack T6 ()</option>
-    <option value="7" data-thumbnail="static/img/attack-7.png">Attack T7 ()</option>
-    <option value="8" data-thumbnail="static/img/attack-8.png">Attack T8 ()</option>
+    <div class="input-container">
+      <label for="item_possui">Item que o Pokémon possui:</label>
+      <select id="item_possui" class="vodiapicker">
+        <option value="0">Nenhum</option>
+        <option value="1" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
+        <option value="2" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
+        <option value="3" data-thumbnail="static/img/attack-3.png">Attack T3 ()</option>
+        <option value="4" data-thumbnail="static/img/attack-4.png">Attack T4 ()</option>
+        <option value="5" data-thumbnail="static/img/attack-5.png">Attack T5 ()</option>
+        <option value="6" data-thumbnail="static/img/attack-6.png">Attack T6 ()</option>
+        <option value="7" data-thumbnail="static/img/attack-7.png">Attack T7 ()</option>
+        <option value="8" data-thumbnail="static/img/attack-8.png">Attack T8 ()</option>
+      </select>
+    </div>
 
-  </select>
+    <div class="lang-select">
+      <button class="btn-select" value=""></button>
+      <div class="b">
+        <ul id="a"></ul>
+      </div>
+    </div>
 
-    <button onclick="calcularDano()">Calcular Dano</button>
+    <div class="input-container">
+      <label for="item_deseja">Item que o Pokémon deseja:</label>
+      <select id="item_deseja" class="vodiapicker-2">
+        <option value="0">Nenhum</option>
+        <option value="1" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
+        <option value="2" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
+        <option value="3" data-thumbnail="static/img/attack-3.png">Attack T3 ()</option>
+        <option value="4" data-thumbnail="static/img/attack-4.png">Attack T4 ()</option>
+        <option value="5" data-thumbnail="static/img/attack-5.png">Attack T5 ()</option>
+        <option value="6" data-thumbnail="static/img/attack-6.png">Attack T6 ()</option>
+        <option value="7" data-thumbnail="static/img/attack-7.png">Attack T7 ()</option>
+        <option value="8" data-thumbnail="static/img/attack-8.png">Attack T8 ()</option>
+      </select>
+    </div>
+
+    <div class="lang-select-2">
+      <button class="btn-select-2" value=""></button>
+      <div class="b-2">
+        <ul id="a-2"></ul>
+      </div>
+    </div>
 
     <div id="resultado"></div>
+    <button id="calcular-btn">Calcular Dano</button>
   </div>
+
+  <div class="footer">additional hours - 4/100</div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="static/calcDamage.js"></script>
+  <script src="static/changeCustomImage.js"></script>
+
 </body>
 </html>
