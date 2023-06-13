@@ -1,83 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Dano Pokémon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <title>Calculadora de Dano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/styles.css">
 </head>
+
 <body>
-
-  <nav class="navbar">
-    <a href="https://github.com/DionySB/dummycalc" target="_blank">
-      <i class="navbar-profile-icon fab fa-github"></i>
+  <div class="navbar">
+    <a href="https://github.com/DionySB/dummycalc">
+      <img src="static/img/github-logo-vector.svg" alt="GitHub" style="width: 200px;">
     </a>
-    <h1 class="navbar-name">Dummy</h1>
-  </nav>
+  </div>
+  
+  <article>
+    <h1>Pokemon Percentual Held</h1>
+  </article>
 
-  <h1>Calculadora de Dano Pokémon</h1>
-  <img src="static/img/allheld.png">
-
-  <div class="container">
-    <div class="input-container">
-      <label for="dano_base">Dano base do Pokémon:</label>
-      <input type="number" id="dano_base" class="relativecontainer">
+  <div class="hero">
+    <div class="dano-base">
+      <label for="danoBase">Insira o dano atual</label>
+      <input type="number" id="dano_base" class="dano-base-input" placeholder="Digite o dano atual">
     </div>
-
-    <div class="input-container">
-      <label for="item_possui">Item que o Pokémon possui:</label>
-      <select id="item_possui" class="vodiapicker">
-        <option value="0">Nenhum</option>
-        <option value="1" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
-        <option value="2" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
-        <option value="3" data-thumbnail="static/img/attack-3.png">Attack T3 ()</option>
-        <option value="4" data-thumbnail="static/img/attack-4.png">Attack T4 ()</option>
-        <option value="5" data-thumbnail="static/img/attack-5.png">Attack T5 ()</option>
-        <option value="6" data-thumbnail="static/img/attack-6.png">Attack T6 ()</option>
-        <option value="7" data-thumbnail="static/img/attack-7.png">Attack T7 ()</option>
-        <option value="8" data-thumbnail="static/img/attack-8.png">Attack T8 ()</option>
-      </select>
-    </div>
-
-    <div class="lang-select">
-      <button class="btn-select" value=""></button>
-      <div class="b">
-        <ul id="a"></ul>
+    <div class="selector" id="item_possui">
+      <label for="heldAtual">Held Atual</label>
+      <div id="selectField">
+        <p id="selectText">Selecione um item (Possui)</p>
+        <img src="static/img/arrow.png" id="arrowIcon">
       </div>
+
+      <ul id="list" class="hide">
+        <li class="options" value="0">
+          <img src="static/img/sword.png">
+          <p>Nenhum</p>
+        </li>
+        <li class="options" value="1">
+          <img src="static/img/attack-1.png">
+          <p>Attack T1 (8%)</p>
+        </li>
+        <li class="options" value="2">
+          <img src="static/img/attack-2.png">
+          <p>Attack T2 (9%)</p>
+        </li>
+        <li class="options" value="3">
+          <img src="static/img/attack-3.png">
+          <p>Attack T3 (12%)</p>
+        </li>
+        <li class="options" value="4">
+          <img src="static/img/attack-4.png">
+          <p>Attack T4 (15%)</p>
+        </li>
+        <li class="options" value="5">
+          <img src="static/img/attack-5.png">
+          <p>Attack T5 (19%)</p>
+        </li>
+        <li class="options" value="6">
+          <img src="static/img/attack-6.png">
+          <p>Attack T6 (25%)</p>
+        </li>
+        <li class="options" value="7">
+          <img src="static/img/attack-7.png">
+          <p>Attack T1 (28%)</p>
+        </li>
+        <li class="options" value="8">
+          <img src="static/img/attack-8.png">
+          <p>Attack T8 (31%)</p>
+        </li>
+      </ul>
     </div>
 
-    <div class="input-container">
-      <label for="item_deseja">Item que o Pokémon deseja:</label>
-      <select id="item_deseja" class="vodiapicker-2">
-        <option value="0">Nenhum</option>
-        <option value="1" data-thumbnail="static/img/attack-1.png">Attack T1 ()</option>
-        <option value="2" data-thumbnail="static/img/attack-2.png">Attack T2 ()</option>
-        <option value="3" data-thumbnail="static/img/attack-3.png">Attack T3 ()</option>
-        <option value="4" data-thumbnail="static/img/attack-4.png">Attack T4 ()</option>
-        <option value="5" data-thumbnail="static/img/attack-5.png">Attack T5 ()</option>
-        <option value="6" data-thumbnail="static/img/attack-6.png">Attack T6 ()</option>
-        <option value="7" data-thumbnail="static/img/attack-7.png">Attack T7 ()</option>
-        <option value="8" data-thumbnail="static/img/attack-8.png">Attack T8 ()</option>
-      </select>
-    </div>
-
-    <div class="lang-select-2">
-      <button class="btn-select-2" value=""></button>
-      <div class="b-2">
-        <ul id="a-2"></ul>
+    <div class="selector2" id="item_deseja">
+      <label for="heldRequerido">Held Requerido</label>
+      <div id="selectField-2">
+        <p id="selectText-2">Selecione um item (Deseja)</p>
+        <img src="static/img/arrow.png" id="arrowIcon-2">
       </div>
+
+      <ul id="list-2" class="hide2">
+        <li class="options-2" value="0">
+          <img src="static/img/sword.png">
+          <p>Nenhum</p>
+        </li>
+        <li class="options-2" value="1">
+          <img src="static/img/attack-1.png">
+          <p>Attack T1 (8%)</p>
+        </li>
+        <li class="options-2" value="2">
+          <img src="static/img/attack-2.png">
+          <p>Attack T2 (9%)</p>
+        </li>
+        <li class="options-2" value="3">
+          <img src="static/img/attack-3.png">
+          <p>Attack T3 (12%)</p>
+        </li>
+        <li class="options-2" value="4">
+          <img src="static/img/attack-4.png">
+          <p>Attack T4 (15%)</p>
+        </li>
+        <li class="options-2" value="5">
+          <img src="static/img/attack-5.png">
+          <p>Attack T5 (19%)</p>
+        </li>
+        <li class="options-2" value="6">
+          <img src="static/img/attack-6.png">
+          <p>Attack T6 (25%)</p>
+        </li>
+        <li class="options-2" value="7">
+          <img src="static/img/attack-7.png">
+          <p>Attack T1 (28%)</p>
+        </li>
+        <li class="options-2" value="8">
+          <img src="static/img/attack-8.png">
+          <p>Attack T8 (31%)</p>
+        </li>
+      </ul>
     </div>
 
-    <div id="resultado"></div>
-    <button id="calcular-btn">Calcular Dano</button>
+    <div id="resultado" class="resultado esconder">
+      <p class="nameresult">Dano:<p id="resultado-texto"></p></p>
+    </div>
   </div>
 
-  <div class="footer">additional hours - 4/100</div>
+  <div class="footer">
+    <a href="https://github.com/DionySB/dummycalc">
+      <img src="static/img/github-logo-vector.svg" alt="GitHub" style="width: 100px; height: 55px">
+    </a>
+    for additional hours
+  </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="static/calcDamage.js"></script>
-  <script src="static/changeCustomImage.js"></script>
+
 
 </body>
 </html>
