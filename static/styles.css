@@ -1,57 +1,40 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
-
 article {
   padding: 50px;
-  background: linear-gradient(
-    to right, 
-    hsl(147, 57%, 50%),
-    hsl(290, 72%, 49%)
-  );
+  background: linear-gradient( to right, hsl(147, 57%, 50%), hsl(290, 72%, 49%) );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
-
 h1 {
   font-size: 8vmin;
   line-height: 1.1;
 }
-
 body{
   background-image: linear-gradient(#000, #333);
-
 }
-
 label {
-  font-family: 'Space Mono', monospace;
   display: block;
   margin-bottom: 5px;
   margin-top: 10px;
   color: #fff;
 }
-
 .hero {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-
 .selector, .selector2{
   margin-top: 400px;
   width: 350px;
-  margin: 10px
+  margin: 10px 
 }
-
-
-#selectField,
-#selectField-2 {
+#selectField, #selectField-2 {
   width: 100%;
   padding: 15px 20px;
   margin-bottom: 30px;
@@ -63,65 +46,47 @@ label {
   justify-content: space-between;
   cursor: pointer;
 }
-
-#selectField img,
-#selectField-2 img {
+#selectField img, #selectField-2 img {
   width: 12px;
-
 }
-
-#list,
-#list-2 {
+#list, #list-2 {
   width: 100%;
   background: white;
   border-radius: 6px;
   overflow: hidden;
 }
-
-.options,
-.options-2 {
-  width: 90%;
+.options, .options-2 {
+  width: 100%;
   padding: 15px 0 15px 70px;
   list-style: none;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
 }
-
-.options img,
-.options-2 img {
-  width: 25px;
+.options img, .options-2 img {
+  width: 30px;
   position: absolute;
   top: 12px;
   left: 25px;
 }
-
-.options:hover,
-.options-2:hover {
+.options:hover, .options-2:hover {
   background: #FF4742;
 }
-
-.hide,
-.hide2 {
+.hide, .hide2 {
   visibility: hidden;
 }
-
 .rotate {
   transform: rotate(180deg);
 }
-
-
 .dano-base {
   width: 350px;
   margin: 10px;
   margin-top: -420px;
   border-radius: 6px;
 }
-
 .dano-base label {
   margin-bottom: 5px;
 }
-
 .dano-base-input {
   width: 100%;
   padding: 15px 20px;
@@ -130,9 +95,7 @@ label {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   display: flex;
-
 }
-
 .navbar {
   width: 100%;
   height: 60px;
@@ -141,7 +104,8 @@ label {
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 999; /* Adicionado um valor alto para garantir que a navbar esteja acima dos outros elementos */
+  z-index: 999;
+ /* Adicionado um valor alto para garantir que a navbar esteja acima dos outros elementos */
 }
 .navbar a {
   color: #fff;
@@ -149,7 +113,6 @@ label {
   font-weight: bold;
   font-size: 20px;
 }
-
 .footer {
   width: 100%;
   height: 60px;
@@ -157,8 +120,8 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Space Mono', monospace;
 }
-
 .footer a {
   color: #fff;
   text-decoration: none;
@@ -166,124 +129,119 @@ label {
   font-size: 18px;
   margin-right: 10px;
 }
-
 .footer span {
   color: #fff;
   font-weight: bold;
   font-size: 18px;
-
 }
-
-.resultado {
-  padding: 5px 5px 5px 5px;
-  margin-top: -424px;
-  width: 220px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #8a2be2; /* Cor do texto em roxo */
-  background: transparent; /* Fundo transparente */
-  cursor: pointer;
-  border-radius: 10px;
-  border: 6px solid;
-  animation: glowing 20s linear infinite;
-
+.test img{
+  background-color: #8a2be2;
+  border-radius: 15px;
+  margin-top: 6px;
 }
-
 .resultado:hover {
-  border: none; /* Remove a borda quando o mouse está sobre o resultado */
+  border: none;
 }
-
-.resultado.esconder {
-  display: none;
+.resultado p{
+  color:white;
+  font-size: 16px 
 }
-
-.nameresult{
-  color: red
+.resultado .nameresult {
+  font-family: 'Space Mono', monospace;
+  padding: 5px;
+  color: green;
 }
-.resultado .nameresult{
-padding: 5px 5px 5px 5px;
-color: green
+.item-image {
+  width: 60px;
 }
-
-@keyframes glowing {
-  0% { border-color: #ff0000; }
-  10% { border-color: #ff7300; }
-  20% { border-color: #fffb00; }
-  30% { border-color: #48ff00; }
-  40% { border-color: #00ffd5; }
-  50% { border-color: #002bff; }
-  60% { border-color: #7a00ff; }
-  70% { border-color: #ff00c8; }
-  80% { border-color: #ff0000; }
-  100% { border-color: #ff0000; }
+.item-image-default {
+  width: 20px;
+  background-color: transparent;
 }
-
-
+.card {
+  margin-top: -239px;
+  padding-left: 60px;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  background: transparent;
+}
+.flip-card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  background: transparent;
+}
+.card:hover .flip-card {
+  transform: rotateY(180deg);
+}
+.flip-front, .flip-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: transparent;
+}
+.flip-front {
+  background: linear-gradient(to right, #a6a6a6, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.flip-back {
+  background: linear-gradient(to right, #000, #032146);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  color: #fff;
+  font: 1rem sans-serif;
+}
+.flip-back p {
+  padding: 1rem;
+}
+.flip-back a {
+  padding: 8px 16px;
+  background-color: #fbbf24;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* Estilos adicionais para exibir os valores de dano */
 @keyframes glowing {
   0% {
-    border-color: #ff0000;
-  }
+      border-color: #ff0000;
+ }
   10% {
-    border-color: #ff7300;
-  }
+      border-color: #ff7300;
+ }
   20% {
-    border-color: #fffb00;
-  }
+      border-color: #fffb00;
+ }
   30% {
-    border-color: #48ff00;
-  }
+      border-color: #48ff00;
+ }
   40% {
-    border-color: #00ffd5;
-  }
+      border-color: #00ffd5;
+ }
   50% {
-    border-color: #002bff;
-  }
+      border-color: #002bff;
+ }
   60% {
-    border-color: #7a00ff;
-  }
+      border-color: #7a00ff;
+ }
   70% {
-    border-color: #ff00c8;
-  }
+      border-color: #ff00c8;
+ }
   80% {
-    border-color: #ff0000;
-  }
+      border-color: #ff0000;
+ }
   100% {
-    border-color: #ff0000;
-  }
-}
-
-/* Media queries para tornar o CSS responsivo */
-
-@media only screen and (max-width: 600px) {
-  /* Estilos para telas menores que 768px */
-
-  .hero {
-    width: 100%;
-    height: 100vh;
-    display: column;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  .selector,
-  .selector2 {
-    margin-top: 20px;
-    width: 100%;
-    margin: 10px;
-  }
-
-  .dano-base {
-    width: 100%;
-    margin: 10px;
-    margin-top: -40px;
-  }
-
-  .resultado {
-    margin-top: -40px;
-  }
-
-  .footer {
-    height: 100px;
-  }
+      border-color: #ff0000;
+ }
 }
