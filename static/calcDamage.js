@@ -90,7 +90,7 @@ function atualizarImagensItens() {
   resultado.appendChild(resultadoTexto);
 }
 
-var itemPossui = "";
+var itemPossui = "0";
 var itemDeseja = "";
 var resultado = document.getElementById('resultado');
 var resultadoTexto = document.getElementById('resultado-texto');
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var danoBaseInput = document.getElementById("dano_base");
   danoBaseInput.addEventListener("input", function() {
       var danoBase = parseFloat(danoBaseInput.value);
-      resultadoTexto.textContent = danoBase.toFixed(2);
+      resultadoTexto.textContent = formatarNumero(danoBase);
   });
 });
 
