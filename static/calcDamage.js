@@ -211,11 +211,15 @@ document.getElementById("selectText-2").onclick = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  var danoBaseInput = document.getElementById("dano_base");
-  danoBaseInput.addEventListener("input", function() {
+    var danoBaseInput = document.getElementById("dano_base");
+    danoBaseInput.addEventListener("input", function() {
       var danoBase = parseFloat(danoBaseInput.value);
-      resultadoTexto.textContent = formatarNumero(danoBase);
+      if (isNaN(danoBase) || danoBaseInput.value.trim() === "") {
+        resultadoTexto.textContent = "Insira um valor";
+      } else {
+        resultadoTexto.textContent = formatarNumero(danoBase);
+      }
+    });
   });
-});
 
 atualizarImagensItens();
