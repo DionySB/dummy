@@ -105,7 +105,6 @@ label {
   position: fixed;
   top: 0;
   z-index: 999;
- /* Adicionado um valor alto para garantir que a navbar esteja acima dos outros elementos */
 }
 .navbar a {
   color: #fff;
